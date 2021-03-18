@@ -1,6 +1,6 @@
 # Is It A Good Boy
 
-A simple web app that visualizes SpaceX launch data
+Fetch random images of dogs and decide if they are a good boy or not
 
 ## Technologies
 - HTML5
