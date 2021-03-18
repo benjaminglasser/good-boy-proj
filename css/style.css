@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+body {
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Luckiest Guy', cursive;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcecfc+0,fba6e1+31,fd89d7+72,ff7cd8+100 */
+    background: #fcecfc; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #fcecfc 0%, #fba6e1 31%, #fd89d7 72%, #ff7cd8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #fcecfc 0%,#fba6e1 31%,#fd89d7 72%,#ff7cd8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #fcecfc 0%,#fba6e1 31%,#fd89d7 72%,#ff7cd8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+}
+
+header {
+    padding-left: 1rem;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    justify-content: center;
+    margin-top: 30px
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#random-dog {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#dog-img {
+    background-image: url("https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg");
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    box-shadow: 2px 2px 5px 2px #000000a8;
+}
+
+#btn-choices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    
+}
+
+#fetch-btn {
+    background-color: #00e1ff;
+    height: 50px;
+    margin-bottom: 40px;
+    font-size: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0px solid transparent;
+    box-shadow: 2px 2px 5px 2px #000000a8;
+    font-family: 'Luckiest Guy', cursive;
+    padding-top: 10px;
+}
+
+#fetch-btn:hover {
+    background: #04c7e1;
+  }
+
+#goodboy-btn {
+    background-color: #8dff8d;
+    width: 140px;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0px solid transparent;
+    box-shadow: 2px 2px 5px 2px #000000a8;
+    font-family: 'Luckiest Guy', cursive;
+    padding-top: 7px;
+}
+
+#goodboy-btn:hover {
+    background: #77da77;
+  }
+
+#badboy-btn {
+    background-color: #ff6565;
+    width: 140px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0px solid transparent;
+    box-shadow: 2px 2px 5px 2px #000000a8;
+    font-family: 'Luckiest Guy', cursive;
+    padding-top: 7px;
+}
+
+#badboy-btn:hover {
+    background: #c74f4f;
+  }
+
+footer {
+    justify-content: center;
+}
