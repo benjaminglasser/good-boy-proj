@@ -15,6 +15,7 @@ const $goodBtn = $('#goodboy-btn');
 const $badBtn = $('#badboy-btn');
 const $goodCntr = $('#good-boy-cntr');
 const $badCntr = $('#bad-boy-cntr');
+const $title = $('.title');
 
 // event listeners
 $fetch.click(getData);
@@ -23,8 +24,18 @@ $badBtn.click(handleBadClick);
 
 // functions - code that represents actions taken/carried out
 
-function getData() {
+Init();
 
+function Init() {
+    $goodBtn.hide();
+    $badBtn.hide();
+    $title.hide();
+}
+
+
+
+
+function getData() {
     $.ajax(BASE_URL)
     .then(function (data) {
         puppy = data;
@@ -32,8 +43,12 @@ function getData() {
     }, function (error) {
         console.log(error);
     });
-}
+    $fetch.hide();
+    $goodBtn.show();
+    $badBtn.show();
+    $title.show();
 
+}
 
 function render() {
     $dogImg.attr({ src: puppy.message });
