@@ -30,7 +30,7 @@ header {
     color: rgb(0, 0, 0);
     font-size: 40px;
     justify-content: center;
-    margin-top: 50px
+    margin: 50px 0;
 }
 
 main {
@@ -38,7 +38,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
 
 #random-dog {
     display: flex;
@@ -114,6 +116,50 @@ main {
 #badboy-btn:hover {
     background: #c74f4f;
   }
+
+
+#choices {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20px 1fr;
+    width: 1000px;
+    justify-content: center;
+
+
+}  
+
+#choices > p {
+    display: flex;
+    justify-content: center;
+}
+
+#good-boy-cntr {
+    display: flex;
+    justify-content: space-evenly; 
+
+    flex-wrap: wrap; 
+}
+
+.good-boys {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+#bad-boy-cntr {
+    display: flex;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;   
+}
+
+.bad-boys {
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
 
 footer {
     justify-content: center;
