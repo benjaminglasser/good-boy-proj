@@ -19,6 +19,7 @@ const $badCntr = $('#bad-boy-cntr');
 const $title = $('.title');
 const $music = $('#music');
 const $stop = $('#stop-music');
+const $cntr = $('#choices')
 
 // event listeners
 $fetch.click(getData);
@@ -26,7 +27,20 @@ $fetch.click(playSound);
 $fetch.click(handleShow);
 $goodBtn.click(handleGoodClick);
 $badBtn.click(handleBadClick);
-$stop.click(handleStop)
+$stop.click(handleStop);
+
+$('#good-boy-cntr').on('click', 'div', function() {
+    $(this).closest('div').fadeOut(500, function() {
+        $(this).remove()
+    })
+})
+
+$('#bad-boy-cntr').on('click', 'div', function() {
+    $(this).closest('div').fadeOut(500, function() {
+        $(this).remove()
+    })
+})
+
 
 // functions - code that represents actions taken/carried out
 
@@ -37,6 +51,7 @@ function Init() {
     $badBtn.hide();
     $title.hide();
     $stop.hide();
+    $cntr.hide();
 }
 
 function playSound(){
@@ -56,6 +71,7 @@ function handleShow() {
     $badBtn.show();
     $title.show();
     $stop.show();
+    $cntr.show();
 }
 
 function getData() {
@@ -78,10 +94,14 @@ function render() {
 
 function handleGoodClick() {
     $goodCntr.prepend(`<div class="good-boys" style="background-image: url('${puppy.message}');"></div>`);
+    const goodBark = new Audio("./music/goodBark.mp3");
+    goodBark.play();
     getData();
 }
 
 function handleBadClick() {
     $badCntr.prepend(`<div class="good-boys" style="background-image: url('${puppy.message}');"></div>`);
+    const badBark = new Audio("./music/badBark.mp3");
+    badBark.play(); 
     getData();
 }
