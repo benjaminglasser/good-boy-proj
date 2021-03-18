@@ -33,6 +33,28 @@ header {
     margin: 50px 0;
 }
 
+#stop-music {
+    display: flex;
+    justify-content: center;
+}
+
+#stop-btn {
+    background-color: #00e1ff;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0px solid transparent;
+    box-shadow: 2px 2px 5px 2px #000000a8;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 15px;
+    height: 30px;
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+#stop-btn:hover {
+    background: #04c7e1;
+  }
+
 main {
     flex-grow: 1;
     display: flex;
@@ -119,7 +141,7 @@ main {
 
 
 #choices {
-    margin-top: 30px;
+    margin-top: 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 20px 1fr;
