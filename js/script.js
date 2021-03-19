@@ -35,6 +35,13 @@ $('#good-boy-cntr').on('click', 'div', function() {
     })
 })
 
+$('#good-boy-cntr').on('click', 'div', function() {
+    let localKey = $(this).closest('div').attr('data-url');
+    console.log(localKey);
+    localStorage.removeItem(localKey);
+});    
+
+
 $('#bad-boy-cntr').on('click', 'div', function() {
     $(this).closest('div').fadeOut(500, function() {
         $(this).remove()
@@ -93,15 +100,25 @@ function render() {
 }
 
 function handleGoodClick() {
-    $goodCntr.prepend(`<div class="good-boys" style="background-image: url('${puppy.message}');"></div>`);
+    $goodCntr.prepend(`<div data-url="${puppy.message}" class="good-boys" style="background-image: url('${puppy.message}');"></div>`);
     const goodBark = new Audio("./music/goodBark.mp3");
     goodBark.play();
     getData();
+    localStorage.setItem(puppy.message, puppy.message);
 }
 
 function handleBadClick() {
-    $badCntr.prepend(`<div class="good-boys" style="background-image: url('${puppy.message}');"></div>`);
+    $badCntr.prepend(`<div class="${puppy.message}" style="background-image: url('${puppy.message}');"></div>`);
     const badBark = new Audio("./music/badBark.mp3");
     badBark.play(); 
     getData();
+}
+
+if(localStorage !== undefined) {
+    for(let i = 0; i< localStorage.length; i++){
+        let keyStorage = localStorage.key(i);
+        let value = localStorage.getItem(keyStorage);
+        $goodCntr.prepend(`<div class="good-boys" style="background-image: url('${value}');"></div>`);
+    }
+
 }
