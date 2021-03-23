@@ -16,10 +16,15 @@
     <header>
         <h1>IS IT A GOOD BOY?</h1>
     </header>
-
-    <div id="stop-music">
-        <button id="stop-btn">stop music</button>
+    <div id="music">
+        <audio class="my_audio" controls preload="none">
+            <source src="./music/song.mp3" type="audio/ogg">
+        </audio>
     </div>
+
+    <!-- <div id="stop-music">
+        <button id="stop-btn">stop music</button>
+    </div> -->
     <main>
         <section id="random-dog">
             <button id="fetch-btn">Fetch!</button>
@@ -41,6 +46,10 @@
             <div id="bad-boy-cntr">
             </div>
         </section>
+
+        <div id="clear">
+            <button id="clear-btn">clear</button>
+        </div>
     </main>
     <footer>
         <p>All Rights Reserved Copyright &copy; Good Boy 2021</p>

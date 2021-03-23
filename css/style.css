@@ -33,12 +33,12 @@ header {
     margin: 50px 0;
 }
 
-#stop-music {
+#music {
     display: flex;
     justify-content: center;
 }
 
-#stop-btn {
+.my_audio {
     background-color: #00e1ff;
     border-radius: 8px;
     cursor: pointer;
@@ -46,12 +46,12 @@ header {
     box-shadow: 2px 2px 5px 2px #000000a8;
     font-family: 'Luckiest Guy', cursive;
     font-size: 15px;
-    height: 30px;
-    width: 100px;
+    /* height: 30px;
+    width: 100px; */
     margin-bottom: 30px;
 }
 
-#stop-btn:hover {
+.my_audio:hover {
     background: #04c7e1;
   }
 
@@ -193,6 +193,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b73a3a', e
     display: flex;
     justify-self: flex-start;
 }
+
+#clear-btn {
+    background-color: #00e1ff;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0px solid transparent;
+    box-shadow: 2px 2px 5px 2px #000000a8;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 15px;
+    height: 30px;
+    width: 100px;
+    padding-top: 5px; 
+    margin-top: 20px;
+}
+
+#clear-btn:hover {
+    background: #04c7e1;
+  }
 
 footer {
     justify-content: center;
