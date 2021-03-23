@@ -110,7 +110,7 @@ function Init() {
 
 function playSound(){
     $audio.volume = 0.0;
-    // $audio.trigger('play');
+    $audio.trigger('play');
 }
 
 // function handleStop() {
