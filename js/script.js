@@ -65,7 +65,7 @@ function Init() {
 
 function playSound(){
     $audio.volume = 0.0;
-    // $audio.trigger('play');
+    $audio.trigger('play');
 }
 
 // function handleStop() {
@@ -117,7 +117,6 @@ function handleGoodClick() {
 
 function handleBadClick() {
     $badCntr.prepend(`<div data-url="${puppy.message}" class="bad-boys" style="background-image: url('${puppy.message}');"></div>`);
-    console.log($badCntr)
     const badBark = new Audio("./music/badBark.mp3");
     badBark.play(); 
     getData();
