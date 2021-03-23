@@ -93,6 +93,12 @@ function getData() {
     });
 }
 
+function handleClear() {
+    $goodCntr.empty();
+    $badCntr.empty();
+    localStorage.clear();
+}
+
 function render() {
     $dogImg.attr({ src: puppy.message });
     let breedText = puppy.message.replace("https://images.dog.ceo/breeds/", "");
@@ -103,7 +109,6 @@ function render() {
 
 function handleGoodClick() {
     $goodCntr.prepend(`<div data-url="${puppy.message}" class="good-boys" style="background-image: url('${puppy.message}');"></div>`);
-    console.log($goodCntr)
     const goodBark = new Audio("./music/goodBark.mp3");
     goodBark.play();
     getData();

@@ -186,12 +186,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b73a3a', e
 }
 
 .bad-boys {
-    background-color: green;
     height: 100px;
     width: 100px;
     margin: 10px;
     display: flex;
     justify-self: flex-start;
+    background-size: cover;
 }
 
 #clear-btn {
