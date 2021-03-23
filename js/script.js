@@ -21,6 +21,7 @@ const $music = $('#music');
 const $clearBtn = $('#clear');
 const $cntr = $('#choices');
 const $audio = $('.my_audio')
+const containers = document.querySelectorAll('.container')
 
 // event listeners
 $fetch.click(getData);
@@ -42,6 +43,50 @@ $('#good-boy-cntr').on('click', 'div', function() {
     localStorage.removeItem(localKey);
 });    
 
+// dragable info
+
+$goodCntr.on('dragstart', 'div', function() {
+    $(this).closest('div').addClass('dragging');
+});
+
+$goodCntr.on('dragend', 'div', function() {
+    $(this).closest('div').removeClass('dragging');
+});
+
+$badCntr.on('dragstart', 'div', function() {
+    $(this).closest('div').addClass('dragging');
+});
+
+$badCntr.on('dragend', 'div', function() {
+    $(this).closest('div').removeClass('dragging');
+});
+
+containers.forEach(container => {
+    container.addEventListener('dragover', e => {
+        e.preventDefault();
+        const draggable = document.querySelector('.dragging')
+        container.appendChild(draggable);
+    })
+})
+
+
+// $badCntr.on('dragover', e => {
+//     e.preventDefault();
+//     const draggable = document.querySelector('.dragging')
+//     $badCntr.prepend(draggable);
+//     $(this).removeClass('dragging');
+
+// });
+  
+
+//     dropZone.addEventListener("drop", e => {
+//         e.preventDefault();
+//         const droppedElementData = e.dataTransfer.getData("text/plain");
+//         console.log(droppedElementData);
+//     })
+// }
+
+// bad boys remove
 
 $('#bad-boy-cntr').on('click', 'div', function() {
     $(this).closest('div').fadeOut(500, function() {
@@ -65,7 +110,7 @@ function Init() {
 
 function playSound(){
     $audio.volume = 0.0;
-    $audio.trigger('play');
+    // $audio.trigger('play');
 }
 
 // function handleStop() {
@@ -108,7 +153,7 @@ function render() {
 }
 
 function handleGoodClick() {
-    $goodCntr.prepend(`<div data-url="${puppy.message}" class="good-boys" style="background-image: url('${puppy.message}');"></div>`);
+    $goodCntr.prepend(`<div data-url="${puppy.message}" class="good-boys" draggable="true" style="background-image: url('${puppy.message}');"></div>`);
     const goodBark = new Audio("./music/goodBark.mp3");
     goodBark.play();
     getData();
@@ -116,7 +161,7 @@ function handleGoodClick() {
 }
 
 function handleBadClick() {
-    $badCntr.prepend(`<div data-url="${puppy.message}" class="bad-boys" style="background-image: url('${puppy.message}');"></div>`);
+    $badCntr.prepend(`<div data-url="${puppy.message}" class="bad-boys" draggable="true" style="background-image: url('${puppy.message}');"></div>`);
     const badBark = new Audio("./music/badBark.mp3");
     badBark.play(); 
     getData();

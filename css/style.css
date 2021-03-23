@@ -169,6 +169,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b73a3a', e
     flex-wrap: wrap; 
 }
 
+.good-boys.dragging {
+    opacity: 0.5;
+}
+
 .good-boys {
     display: flex;
     justify-self: flex-start;
