@@ -51,13 +51,21 @@ $goodCntr.on('click', 'div', function() {
 });    
 
 // dragable info
-
+let url;
 $goodCntr.on('dragstart', 'div', function() {
     $(this).closest('div').addClass('dragging');
 });
 
 $goodCntr.on('dragend', 'div', function() {
     $(this).closest('div').removeClass('dragging');
+    badPup = badPup.filter(function(item) {
+        return item !== url
+    })
+    let badPup_serialized = JSON.stringify(badPup);
+    localStorage.setItem("Bad Puppy", badPup_serialized);
+    goodPup.unshift(url);
+    let goodPup_serialized = JSON.stringify(goodPup);
+    localStorage.setItem("Good Puppy", goodPup_serialized);
 });
 
 $badCntr.on('dragstart', 'div', function() {
@@ -66,6 +74,14 @@ $badCntr.on('dragstart', 'div', function() {
 
 $badCntr.on('dragend', 'div', function() {
     $(this).closest('div').removeClass('dragging');
+    goodPup = goodPup.filter(function(item) {
+        return item !== url
+    })
+    let goodPup_serialized = JSON.stringify(goodPup);
+    localStorage.setItem("Good Puppy", goodPup_serialized);
+    badPup.unshift(url);
+    let badPup_serialized = JSON.stringify(badPup);
+    localStorage.setItem("Bad Puppy", badPup_serialized);
 });
 
 containers.forEach(container => {
@@ -73,6 +89,7 @@ containers.forEach(container => {
         e.preventDefault();
         const draggable = document.querySelector('.dragging')
         container.appendChild(draggable);
+        url = draggable.getAttribute('data-url');
     })
 })
 
@@ -90,8 +107,6 @@ $badCntr.on('click', 'div', function() {
     badPup = badPup.filter(function(item) {
         return item !== info
     })
-    console.log(goodPup);
-
     let badPup_serialized = JSON.stringify(badPup);
     localStorage.setItem("Bad Puppy", badPup_serialized);
 });    
